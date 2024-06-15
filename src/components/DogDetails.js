@@ -9,7 +9,7 @@ const DogDetails = ({ dogs }) => {
         return <p>Dog not found.</p>;
     }
 
-    const imageUrl = dog['이미지'] ? `/images/${dog['이미지']}` : '/images/토리.png';
+    const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
 
     return (
         <div className="dog-details">
