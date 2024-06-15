@@ -14,15 +14,29 @@ header {
   padding: 20px 0;
 }
 
+
 header h1 a {
   color: inherit;
   text-decoration: none;
+}
+
+label {
+  display: block;
+  margin-right: 10px;
 }
 
 input[type="text"] {
   padding: 5px;
   border: 1px solid #ccc;
   font-size: small;
+  margin-left: 5px;
+}
+
+select{
+  padding: 5px;
+  border: 1px solid #ccc;
+  font-size: small;
+  margin-left: 5px;
 }
 
 filter select {
