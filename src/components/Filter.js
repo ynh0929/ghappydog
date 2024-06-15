@@ -9,15 +9,15 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setSortOrde
     return (
         <div className="filter">
             <label>
-                위치 필터:
+                위치:
                 <input type="text" onChange={handleLocationChange} />
             </label>
             <label>
-                유실 날짜 필터:
+                유실 날짜:
                 <input type="text" placeholder="yyyy, yyyy-mm, yyyy-mm-dd" onChange={handleDateChange} />
             </label>
             <label>
-                성별 필터:
+                성별:
                 <select onChange={handleGenderChange}>
                     <option value="">All</option>
                     <option value="암">암</option>

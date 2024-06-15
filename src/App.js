@@ -48,7 +48,7 @@ const App = () => {
                 <header>
                     <h1><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
                     <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-                    <p>총 유실동물 수: {filteredDogs.length}</p>
+                    <p><strong>총 유실동물 수: {filteredDogs.length}</strong></p>
                     <Filter 
                         setLocationFilter={setLocationFilter} 
                         setDateFilter={setDateFilter} 
@@ -65,7 +65,7 @@ const App = () => {
                                         <DogCard key={dog['이름']} dog={dog} />
                                     ))
                                 ) : (
-                                    <p>No dogs found for the selected filters.</p>
+                                    <p>선택한 필터에 해당하는 강아지를 찾을 수 없습니다.</p>
                                 )}
                             </div>
                         </section>
