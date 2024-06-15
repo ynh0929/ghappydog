@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 
 const LoadCSV = ({ setDogs }) => {
     useEffect(() => {
-        fetch('/지해피독 수색용 유실견 리스트.csv')
+        fetch(process.env.PUBLIC_URL + '/지해피독 수색용 유실견 리스트.csv')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
