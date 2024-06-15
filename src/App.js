@@ -42,7 +42,7 @@ const App = () => {
     console.log('Filtered Dogs:', filteredDogs); // Debug: Log filtered dogs
 
     return (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename="/ghappydog">
             <LoadCSV setDogs={setDogs} />
             <div className="container">
                 <header>
