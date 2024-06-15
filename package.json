@@ -15,7 +15,7 @@
     "react-scripts": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://{username}.github.io/{repository-name}",
+  "homepage": "http://ynh0929.github.io/ghappydog",
   "scripts": {
      "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
