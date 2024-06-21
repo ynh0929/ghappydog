@@ -4,6 +4,7 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setSortOrde
     const handleLocationChange = (e) => setLocationFilter(e.target.value);
     const handleDateChange = (e) => setDateFilter(e.target.value);
     const handleGenderChange = (e) => setGenderFilter(e.target.value);
+    const handleTypeChange = (e) => setTypeFilter(e.target.value);
     //const handleSortOrderChange = (e) => setSortOrder(e.target.value);
     
     return (
@@ -22,6 +23,14 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setSortOrde
                     <option value="">All</option>
                     <option value="암">암</option>
                     <option value="수">수</option>
+                </select>
+            </label>
+            <label>
+                종류:
+                <select onChange={handleGenderChange}>
+                    <option value="">All</option>
+                    <option value="개">개</option>
+                    <option value="고양이">고양이</option>
                 </select>
             </label>
             {/* <label>

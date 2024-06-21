@@ -11,6 +11,7 @@ const App = () => {
     const [locationFilter, setLocationFilter] = useState('');
     const [dateFilter, setDateFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
+    const [typeFilter, setTypeFilter] = useState('');
 
     console.log('Dogs State:', dogs); // Debug: Log dogs state
 
@@ -36,7 +37,11 @@ const App = () => {
             genderFilter === ''
         );
 
-        return locationMatch && dateMatch && genderMatch;
+        const typeMatch = (
+            dog['종류'] === typeFilter || 
+            typeFilter === ''
+        );
+        return locationMatch && dateMatch && genderMatch && typeMatch;
     });
 
     console.log('Filtered Dogs:', filteredDogs); // Debug: Log filtered dogs
@@ -53,6 +58,7 @@ const App = () => {
                         setLocationFilter={setLocationFilter} 
                         setDateFilter={setDateFilter} 
                         setGenderFilter={setGenderFilter}
+                        setTypeFilter={setTypeFilter}
                     />
                 </header>
 
