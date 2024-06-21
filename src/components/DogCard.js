@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const DogCard = ({ dog }) => {
-    const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
+    //const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
+    const imageUrl = dog['이미지'] 
+    ? `${process.env.PUBLIC_URL}/images/${dog['이미지'].replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}` 
+    : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
+
     return (
         <div className="dog-card" data-location={dog['지역']} data-date={dog['유실 날짜']} data-gender={dog['성별']}>
             <img src={imageUrl} alt={dog['이름']} />
