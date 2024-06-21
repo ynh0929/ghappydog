@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setSortOrder }) => {
+const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter, setSortOrder }) => {
     const handleLocationChange = (e) => setLocationFilter(e.target.value);
     const handleDateChange = (e) => setDateFilter(e.target.value);
     const handleGenderChange = (e) => setGenderFilter(e.target.value);
