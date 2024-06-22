@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1df25af0fa3ecbb390bf26d1c135d223",
+    "revision": "b60b5603373ccb9b1c16393859676103",
     "url": "/ghappydog/index.html"
   },
   {
-    "revision": "3807755ccd9188e5f9af",
-    "url": "/ghappydog/static/css/main.207405de.chunk.css"
+    "revision": "c4adf407097b1d70b8cb",
+    "url": "/ghappydog/static/css/main.6d673661.chunk.css"
   },
   {
     "revision": "0d15cc4c1d32f51c6983",
     "url": "/ghappydog/static/js/2.7d852036.chunk.js"
   },
   {
-    "revision": "3807755ccd9188e5f9af",
+    "revision": "c4adf407097b1d70b8cb",
     "url": "/ghappydog/static/js/main.b4293ba3.chunk.js"
   },
   {
