@@ -74,3 +74,30 @@ header {
   text-align: center;
 
 }
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .dog-card {
+      padding: 8px;
+      margin: 8px;
+  }
+
+  .dog-card img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .dog-card h3 {
+      font-size: 1.2em;
+  }
+
+  .dog-card p {
+      margin: 4px 0;
+  }
+
+  .dog-card a {
+      bottom: 8px;
+      right: 8px;
+  }
+}
