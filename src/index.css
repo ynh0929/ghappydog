@@ -114,6 +114,10 @@ header {
   color: #ff6701;
 }
 
+.dog-details p{
+font-size: 16px;
+}
+
 .dog-details-content {
   display: flex;
   flex-wrap: wrap;
@@ -183,14 +187,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
-  
-  
-}
-
-@media (min-width: 350px) {
-  .dog-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .dog-card p {
     margin: 5px 0;
     font-size: 12px;
@@ -199,6 +195,16 @@ button:hover {
     margin: 5px 0;
     font-size: 18px;
   }
+  .dog-details p{
+    font-size: 13px;
+    }
+}
+
+@media (min-width: 350px) {
+  .dog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
 }
 
 @media (max-width: 768px) {
@@ -213,7 +219,15 @@ button:hover {
     margin-right: 0;
   }
 
-  
+  .dog-card p {
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .dog-card h2 {
+    margin: 8px 0;
+    font-size: 19px;
+  }
 }
 
 @media (min-width: 768px) {

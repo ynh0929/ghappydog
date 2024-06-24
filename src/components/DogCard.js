@@ -7,7 +7,7 @@ const DogCard = ({ dog }) => {
         : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
 
     return (
-        <div className="dog-card border p-4 rounded shadow-lg relative" style={{ padding: '20px', position: 'relative' }}>
+        <div className="dog-card border p-4 rounded shadow-lg relative" style={{position: 'relative' }}>
             <img src={imageUrl} alt={dog['이름']} className="w-full h-48 object-cover rounded mb-4" />
             <h2>{dog['이름']}</h2>
             <p><strong>유실 날짜:</strong> {dog['유실 날짜']}</p>
