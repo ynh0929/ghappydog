@@ -43,13 +43,6 @@ header {
   text-decoration: underline;
 }
 
-/* .dog-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-} */
-
 .dog-list {
   display: grid;
   gap: 20px;
@@ -66,8 +59,7 @@ header {
   text-align: left;
   background-color: #fff;
   transition: transform 0.2s;
-  /* padding: 5px; Added padding */
-  /* position: relative; To position the "더 보기 ..." link */
+  padding: 20px; /* Added padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures proper spacing between elements */
@@ -117,7 +109,6 @@ header {
   text-decoration: underline;
 }
 
-
 /* Ensure "카톡 오픈채팅" link wraps to the next line */
 .dog-card a {
   display: inline-block;
@@ -130,7 +121,7 @@ header {
 }
 
 .dog-details p{
-font-size: 16px;
+  font-size: 16px;
 }
 
 .dog-details-content {
@@ -157,24 +148,34 @@ font-size: 16px;
   margin: 0 auto; /* Center the image */
 }
 
-.filter {
+.filter-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin: 20px 0;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .filter label {
-  flex: 1 1 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
 }
 
 .filter-buttons {
-  width: 100%;
   display: flex;
-  justify-content: center;
   gap: 10px;
+  flex: 1 1 100%;
+  justify-content: center;
   margin-top: 10px;
 }
 
@@ -188,7 +189,7 @@ select {
 button {
   background-color: #007bff;
   color: #fff;
-  padding: 10px 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -198,44 +199,35 @@ button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 350px) {
-  .dog-card {
-    max-width: 100%;
+@media (max-width: 600px) {
+  .dog-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
   }
 
   .filter {
     flex-direction: column;
-    align-items: left;
-  }
-  .filter label {
-    text-align: left;
+    align-items: center;
   }
 
   .filter-buttons {
     flex-direction: column;
+    align-items: center;
   }
 
   .dog-card p {
     margin: 5px 0;
     font-size: 12px;
   }
+
   .dog-card h2 {
     margin: 5px 0;
     font-size: 18px;
   }
-  .dog-details p{
+
+  .dog-details p {
     font-size: 13px;
-    }
-}
-
-@media (min-width: 350px) {
-  .dog-list {
-    grid-template-columns: repeat(2, 1fr);
   }
- 
-}
 
-@media (max-width: 768px) {
   .dog-details-content {
     flex-direction: column;
     align-items: center;
@@ -246,23 +238,12 @@ button:hover {
     flex-basis: 100%;
     margin-right: 0;
   }
-
-  .dog-card p {
-    margin: 8px 0;
-    font-size: 14px;
-  }
-
-  .dog-card h2 {
-    margin: 7px 0;
-    font-size: 18px;
-  }
 }
 
 @media (min-width: 768px) {
   .dog-list {
     grid-template-columns: repeat(3, 1fr);
   }
-
 }
 
 @media (min-width: 1024px) {
