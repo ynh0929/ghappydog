@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
+import DogDetails from './components/DogDetails';
 import LoadCSV from './components/LoadCSV';
 import './styles/tailwind.css';
 
