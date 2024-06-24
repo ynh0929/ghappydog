@@ -23,7 +23,7 @@ const DogCard = ({ dog }) => {
                 )}
             </div>
             <div className="more-details-container">
-                <Link to={`/dog-details/${dog['이름']}`} className="more-details">더 보기 ...</Link>
+                <Link to={`/ghappydog/dog-details/${dog['이름']}`} className="more-details">더 보기 ...</Link>
             </div>
         </div>
     );

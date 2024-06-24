@@ -232,6 +232,10 @@ button:hover {
     font-size: 18px;
   }
 
+  .dog-list{
+    display: grid;
+  };
+
   .dog-details p {
     font-size: 13px;
   }
