@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const DogCard = ({ dog }) => {
     //const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
     const imageUrl = dog['이미지'] 

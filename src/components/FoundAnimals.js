@@ -34,16 +34,16 @@ const FoundAnimals = ({ foundAnimals }) => {
 
     return (
         <div>
-            <h1>지해피독 발견된 동물 리스트</h1>
-            <p>지해피독에 오신 것을 환영합니다. 여기서 발견된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-            <p>총 발견동물 수: {filteredAnimals.length}</p>
+            <h1 className="text-2xl font-bold mb-4">지해피독 발견된 동물 리스트</h1>
+            <p className="mb-4">지해피독에 오신 것을 환영합니다. 여기서 발견된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
+            <p className="font-bold mb-4">총 발견동물 수: {filteredAnimals.length}</p>
             <Filter 
                 setLocationFilter={setLocationFilter} 
                 setDateFilter={setDateFilter} 
                 setGenderFilter={setGenderFilter}
             />
             <section id="dog-list">
-                <div className="dog-list">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {filteredAnimals.length > 0 ? (
                         filteredAnimals.map(animal => (
                             <DogCard key={animal['이름']} dog={animal} />

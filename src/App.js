@@ -3,20 +3,20 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
 import LoadCSV from './components/LoadCSV';
-import './App.css';
+import './styles/tailwind.css';
 
 const App = () => {
     const [lostAnimals, setLostAnimals] = useState([]);
     const [foundAnimals, setFoundAnimals] = useState([]);
 
     return (
-        <Router>
+        <Router basename="/ghappydog">
             <LoadCSV setLostAnimals={setLostAnimals} setFoundAnimals={setFoundAnimals} />
-            <div className="container">
-                <header>
-                    <nav>
-                        <ul className="nav-list">
-                            <li><Link to="/">유실 동물 리스트</Link></li>
+            <div className="container mx-auto p-4">
+                <header className="mb-4">
+                    <nav className="flex justify-between items-center bg-blue-500 text-white p-4 rounded">
+                        <ul className="flex space-x-4">
+                            <li><Link to="/" onClick={() => window.location.reload()}>유실 동물 리스트</Link></li>
                             <li><Link to="/found">발견된 동물 리스트</Link></li>
                         </ul>
                     </nav>

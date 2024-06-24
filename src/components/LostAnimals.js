@@ -40,9 +40,9 @@ const LostAnimals = ({ lostAnimals }) => {
 
     return (
         <div>
-            <h1>지해피독 유실 동물 리스트</h1>
-            <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-            <p>총 유실동물 수: {filteredDogs.length}</p>
+            <h1 className="text-2xl font-bold mb-4"><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
+            <p className="mb-4">지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
+            <p className="font-bold mb-4">총 유실동물 수: {filteredDogs.length}</p>
             <Filter 
                 setLocationFilter={setLocationFilter} 
                 setDateFilter={setDateFilter} 
@@ -50,7 +50,7 @@ const LostAnimals = ({ lostAnimals }) => {
                 setTypeFilter={setTypeFilter} 
             />
             <section id="dog-list">
-                <div className="dog-list">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {filteredDogs.length > 0 ? (
                         filteredDogs.map(dog => (
                             <DogCard key={dog['이름']} dog={dog} />
