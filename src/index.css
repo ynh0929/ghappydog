@@ -59,7 +59,7 @@ header {
   text-align: left;
   background-color: #fff;
   transition: transform 0.2s;
-  padding: 20px; /* Added padding */
+  /* padding: 20px; Added padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures proper spacing between elements */
