@@ -1,45 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter }) => {
-    const [location, setLocation] = useState('');
-    const [date, setDate] = useState('');
-    const [gender, setGender] = useState('');
-    const [type, setType] = useState('');
-
-    const handleFilter = () => {
-        setLocationFilter(location);
-        setDateFilter(date);
-        setGenderFilter(gender);
-        setTypeFilter(type);
-    };
+    const handleLocationChange = (e) => setLocationFilter(e.target.value);
+    const handleDateChange = (e) => setDateFilter(e.target.value);
+    const handleGenderChange = (e) => setGenderFilter(e.target.value);
+    const handleTypeChange = (e) => setTypeFilter(e.target.value);
 
     return (
-        <div className="filter mb-4">
-            <label className="block mb-2">
+        <div className="filters">
+            <label>
                 위치 필터:
-                <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} className="border rounded p-2 w-full" />
+                <input type="text" onChange={handleLocationChange} />
             </label>
-            <label className="block mb-2">
+            <label>
                 유실 날짜 필터:
-                <input type="text" value={date} onChange={(e) => setDate(e.target.value)} placeholder="yyyy, yyyy-mm, yyyy-mm-dd" className="border rounded p-2 w-full" />
+                <input type="text" placeholder="yyyy, yyyy-mm, yyyy-mm-dd" onChange={handleDateChange} />
             </label>
-            <label className="block mb-2">
+            <label>
                 성별 필터:
-                <select value={gender} onChange={(e) => setGender(e.target.value)} className="border rounded p-2 w-full">
+                <select onChange={handleGenderChange}>
                     <option value="">All</option>
                     <option value="암">암</option>
                     <option value="수">수</option>
                 </select>
             </label>
-            <label className="block mb-2">
+            <label>
                 종류 필터:
-                <select value={type} onChange={(e) => setType(e.target.value)} className="border rounded p-2 w-full">
+                <select onChange={handleTypeChange}>
                     <option value="">All</option>
                     <option value="개">개</option>
                     <option value="고양이">고양이</option>
                 </select>
             </label>
-            <button onClick={handleFilter} className="bg-blue-500 text-white px-4 py-2 rounded">필터 적용</button>
         </div>
     );
 };

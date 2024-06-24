@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import DogCard from './DogCard';
 import Filter from './Filter';
 
@@ -8,15 +7,28 @@ const LostAnimals = ({ lostAnimals }) => {
     const [dateFilter, setDateFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
     const [typeFilter, setTypeFilter] = useState('');
+    const [filtersApplied, setFiltersApplied] = useState(false);
 
-    const filteredDogs = lostAnimals.filter(dog => {
-        const dateLost = new Date(dog['유실 날짜'].replace(/\./g, '-'));
+    const applyFilters = () => {
+        setFiltersApplied(true);
+    };
+
+    const resetFilters = () => {
+        setLocationFilter('');
+        setDateFilter('');
+        setGenderFilter('');
+        setTypeFilter('');
+        setFiltersApplied(false);
+    };
+
+    const filteredAnimals = lostAnimals.filter(animal => {
+        const dateLost = new Date(animal['유실 날짜'].replace(/\./g, '-'));
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
         const locationMatch = (
-            dog['시, 군, 구']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
-            dog['동, 읍, 면']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
-            dog['세부 주소']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
+            animal['시, 군, 구']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
+            animal['동, 읍, 면']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
+            animal['세부 주소']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
             locationFilter === ''
         );
 
@@ -27,12 +39,12 @@ const LostAnimals = ({ lostAnimals }) => {
         );
 
         const genderMatch = (
-            dog['성별'] === genderFilter || 
+            animal['성별'] === genderFilter || 
             genderFilter === ''
         );
 
         const typeMatch = (
-            dog['종류'] === typeFilter || 
+            animal['종류'] === typeFilter || 
             typeFilter === ''
         );
 
@@ -41,23 +53,26 @@ const LostAnimals = ({ lostAnimals }) => {
 
     return (
         <div>
-            <h1 className="text-2xl font-bold mb-4"><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
-            <p className="mb-4">지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-            <p className="font-bold mb-4">총 유실동물 수: {filteredDogs.length}</p>
-            <Filter 
-                setLocationFilter={setLocationFilter} 
-                setDateFilter={setDateFilter} 
-                setGenderFilter={setGenderFilter} 
-                setTypeFilter={setTypeFilter} 
-            />
-            <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4" onClick={() => { setLocationFilter(''); setDateFilter(''); setGenderFilter(''); setTypeFilter(''); }}>
-                필터 초기화
-            </button>
+            <h1>지해피독 유실 동물 리스트</h1>
+            <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
+            <p><strong>총 유실동물 수: {filteredAnimals.length}</strong></p>
+            <div className="filters mb-4">
+                <Filter 
+                    setLocationFilter={setLocationFilter} 
+                    setDateFilter={setDateFilter} 
+                    setGenderFilter={setGenderFilter}
+                    setTypeFilter={setTypeFilter}
+                />
+                <div className="my-4 flex justify-center gap-4">
+                    <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
+                    <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
+                </div>
+            </div>
             <section id="dog-list">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {filteredDogs.length > 0 ? (
-                        filteredDogs.map(dog => (
-                            <DogCard key={dog['이름']} dog={dog} />
+                <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {filtersApplied && filteredAnimals.length > 0 ? (
+                        filteredAnimals.map(animal => (
+                            <DogCard key={animal['이름']} dog={animal} />
                         ))
                     ) : (
                         <p>선택한 필터에 맞는 강아지가 없습니다.</p>

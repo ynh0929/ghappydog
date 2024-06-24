@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-sans bg-gray-100;
+}
+
+.container {
+  @apply w-4/5 mx-auto bg-white p-5 shadow-lg rounded-lg mt-5;
+}
+
+header {
+  @apply text-center mb-5;
+}
+
+.dog-list {
+  @apply flex flex-wrap gap-5 justify-center;
+}
+
+.filters {
+  @apply flex justify-center gap-5 mb-5;
+}
+
+.filters label {
+  @apply block;
+}
+
+.filters input,
+.filters select {
+  @apply p-1 border border-gray-300 rounded-md w-48;
+}
+
+.dog-details {
+  @apply text-left;
+}
+
+.dog-details img {
+  @apply w-72 h-auto rounded-lg mb-5;
+  @apply text-center;
+}
+
+.dog-card {
+  @apply border border-gray-300 p-4 m-4 rounded-lg shadow-md transition-transform;
+  @apply relative;
+}
+
+.dog-card img {
+  @apply max-w-full rounded-lg;
+}
+
+.dog-card h3 {
+  @apply mt-0 text-xl;
+}
+
+.dog-card p {
+  @apply my-2;
+}
+
+.dog-card a {
+  @apply absolute bottom-4 right-4 text-blue-500 no-underline;
+}

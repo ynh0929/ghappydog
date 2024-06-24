@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
@@ -14,7 +13,7 @@ const App = () => {
     return (
         <Router basename="/ghappydog">
             <LoadCSV setLostAnimals={setLostAnimals} setFoundAnimals={setFoundAnimals} />
-            <div className="container mx-auto p-4">
+            <div className="container">
                 <header className="mb-4">
                     <nav className="flex justify-between items-center bg-blue-500 text-white p-4 rounded">
                         <ul className="flex space-x-4">
