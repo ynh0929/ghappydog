@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import DogCard from './DogCard';
-import DogDetails from './DogDetails';
-import Filter from './Filter';
+import DogCard from './components/DogCard'
+import DogDetails from './components/DogDetails';
+import Filter from './components/Filter';
 import LoadCSV from './LoadCSV';
-import LostAnimals from './LostAnimals';
-import FoundAnimals from './FoundAnimals';
+import LostAnimals from './components/LostAnimals';
+import FoundAnimals from './components/FoundAnimals';
 import './App.css';
 import './index.css';
 
