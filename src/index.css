@@ -67,7 +67,10 @@ header {
   background-color: #fff;
   transition: transform 0.2s;
   /* padding: 5px; Added padding */
-  position: relative; /* To position the "더 보기 ..." link */
+  /* position: relative; To position the "더 보기 ..." link */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures proper spacing between elements */
 }
 
 .dog-card img {
@@ -79,7 +82,7 @@ header {
   margin: 10px 0;
   color: #ff6701;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .dog-card p {
@@ -87,18 +90,25 @@ header {
   font-size: 16px;
 }
 
+.dog-card-info {
+  flex-grow: 1; /* Allow this section to grow and push the link down */
+}
+
 .dog-card .info {
   padding: 5px; /* Add 5px padding to info paragraphs */
+  margin: 5px 0;
 }
 
 .dog-card:hover {
   transform: scale(1.05);
 }
 
+.more-details-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns the link to the bottom right */
+}
+
 .more-details {
-  position: absolute; /* Align to bottom right */
-  bottom: 10px; /* Adjusted to ensure spacing */
-  right: 10px; /* Adjusted to ensure spacing */
   color: #007bff;
   text-decoration: none;
 }
@@ -106,6 +116,7 @@ header {
 .more-details:hover {
   text-decoration: underline;
 }
+
 
 /* Ensure "카톡 오픈채팅" link wraps to the next line */
 .dog-card a {
@@ -225,12 +236,12 @@ button:hover {
 
   .dog-card p {
     margin: 8px 0;
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .dog-card h2 {
     margin: 7px 0;
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
