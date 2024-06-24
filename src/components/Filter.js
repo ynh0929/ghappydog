@@ -65,7 +65,6 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
             </label>
             <div className="filter-buttons">
                 <button onClick={resetFilters}>필터 초기화</button>
-                <button onClick={applyFilters}>필터 적용</button>
             </div>
         </div>
     );
