@@ -13,19 +13,16 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^3.0.1",
-    "tailwindcss": "^3.4.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./src/index.css",
-    "build": "npm run build:css && react-scripts build",
+    "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
