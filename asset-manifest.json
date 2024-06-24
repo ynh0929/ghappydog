@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ghappydog/static/css/main.51b92477.chunk.css",
+    "main.css": "/ghappydog/static/css/main.20fe4862.chunk.css",
     "main.js": "/ghappydog/static/js/main.6032d9ab.chunk.js",
     "main.js.map": "/ghappydog/static/js/main.6032d9ab.chunk.js.map",
     "runtime~main.js": "/ghappydog/static/js/runtime~main.88cefebb.js",
@@ -10,8 +10,8 @@
     "static/js/3.177faaa1.chunk.js": "/ghappydog/static/js/3.177faaa1.chunk.js",
     "static/js/3.177faaa1.chunk.js.map": "/ghappydog/static/js/3.177faaa1.chunk.js.map",
     "index.html": "/ghappydog/index.html",
-    "precache-manifest.2f3bfd2f4031de135b7482171dccaf67.js": "/ghappydog/precache-manifest.2f3bfd2f4031de135b7482171dccaf67.js",
+    "precache-manifest.cc92969dbbaa613568668a4602de07fa.js": "/ghappydog/precache-manifest.cc92969dbbaa613568668a4602de07fa.js",
     "service-worker.js": "/ghappydog/service-worker.js",
-    "static/css/main.51b92477.chunk.css.map": "/ghappydog/static/css/main.51b92477.chunk.css.map"
+    "static/css/main.20fe4862.chunk.css.map": "/ghappydog/static/css/main.20fe4862.chunk.css.map"
   }
 }
