@@ -15,10 +15,10 @@ const DogCard = ({ dog }) => {
             <p><strong>견종/묘종:</strong> {dog['견종/묘종']}</p>
             <p><strong>유실 장소:</strong> {dog['시, 군, 구']}, {dog['동, 읍, 면']}, {dog['세부 주소']}</p>
             {dog['URL'] && (
-                <p style={{ whiteSpace: 'nowrap' }}>
-                    <strong>카톡 오픈채팅:</strong> 
-                    <a href={dog['URL']} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '5px' }}>{dog['URL']}</a>
-                </p>
+                <p>
+                 <strong>카톡 오픈채팅:</strong>
+                 <a href={dog['URL']} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', wordWrap: 'break-word' }}>{dog['URL']}</a>
+                 </p>
             )}
             <Link to={`/dog-details/${dog['이름']}`} className="more-details" style={{ position: 'absolute', bottom: '20px', right: '20px', color: '#007bff', textDecoration: 'none' }}>더 보기 ...</Link>
         </div>
