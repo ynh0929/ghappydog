@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const DogDetails = ({ dogs }) => {
+
+const DogDetails = ({ animals }) => {
     const { name } = useParams();
-    const dog = dogs.find(dog => dog['이름'] === name);
+    const dog = animals.find(dog => dog['이름'] === name);
 
     if (!dog) {
-        return <p>동물을 찾을 수 없습니다.</p>;
+        return <p>해당 강아지를 찾을 수 없습니다.</p>;
     }
 
    // const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
@@ -15,8 +16,8 @@ const DogDetails = ({ dogs }) => {
    : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
 
     return (
-        <div className="dog-details">
-            <img src={imageUrl} alt={dog['이름']} />
+        <div className="dog-details container mx-auto p-4">
+            <img src={imageUrl} alt={dog['이름']} className="w-full max-w-md mx-auto mb-4" />
             <h2>{dog['이름']}</h2>
                 <p><strong>유실 날짜:</strong> {dog['유실 날짜']}</p>
                 <p><strong>성별:</strong> {dog['성별']}</p>

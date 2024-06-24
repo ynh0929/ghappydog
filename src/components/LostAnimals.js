@@ -50,7 +50,7 @@ const LostAnimals = ({ lostAnimals }) => {
     });
 
     return (
-        <div>
+        <div className="container mx-auto px-4">
             <h1 className="text-center text-2xl font-bold mb-4">지해피독 유실 동물 리스트</h1>
             <p className="text-center mb-4">지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
             <p className="text-center mb-4"><strong>총 유실동물 수: {filteredAnimals.length}</strong></p>
@@ -63,11 +63,11 @@ const LostAnimals = ({ lostAnimals }) => {
                 />
                 <div className="my-4 flex justify-center gap-4">
                     <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
-                    {/* <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button> */}
+                    <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
                 </div>
             </div>
             <section id="dog-list">
-                <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {filteredAnimals.length > 0 ? (
                         filteredAnimals.map(animal => (
                             <DogCard key={animal['이름']} dog={animal} />

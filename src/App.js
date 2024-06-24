@@ -1,32 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import DogCard from './components/DogCard';
+import DogDetails from './components/DogDetails';
+import Filter from './components/Filter';
+import LoadCSV from './components/LoadCSV';
 import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
-import DogDetails from './components/DogDetails';
-import LoadCSV from './components/LoadCSV';
-import './input.css';
+import './App.css';
 
 const App = () => {
-    const [lostAnimals, setLostAnimals] = useState([]);
-    const [foundAnimals, setFoundAnimals] = useState([]);
+    const [dogs, setDogs] = useState([]);
+    const [foundDogs, setFoundDogs] = useState([]);
+    const [locationFilter, setLocationFilter] = useState('');
+    const [dateFilter, setDateFilter] = useState('');
+    const [genderFilter, setGenderFilter] = useState('');
+    const [typeFilter, setTypeFilter] = useState('');
+
+    useEffect(() => {
+        // Fetch the CSV data and set the state
+    }, []);
 
     return (
         <Router basename="/ghappydog">
-            <LoadCSV setLostAnimals={setLostAnimals} setFoundAnimals={setFoundAnimals} />
-            <div className="container mx-auto p-4 bg-white shadow-lg rounded-lg mt-4">
-                <header className="mb-4">
-                    <nav className="flex justify-between items-center bg-blue-500 text-white p-4 rounded">
-                        <ul className="flex space-x-4">
-                            <li><Link to="/" className="hover:underline">유실 동물 리스트</Link></li>
-                            <li><Link to="/found" className="hover:underline">발견된 동물 리스트</Link></li>
-                        </ul>
+            <LoadCSV setDogs={setDogs} />
+            <LoadCSV setDogs={setFoundDogs} filePath="/지해피독_찾음.csv" />
+            <div className="container">
+                <header className="text-center">
+                    <h1><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
+                    <nav className="flex justify-center gap-4 my-4">
+                        <Link to="/" className="bg-blue-500 text-white py-2 px-4 rounded">유실 동물</Link>
+                        <Link to="/found" className="bg-green-500 text-white py-2 px-4 rounded">발견 동물</Link>
                     </nav>
                 </header>
-
                 <Routes>
-                    <Route path="/" element={<LostAnimals lostAnimals={lostAnimals} />} />
-                    <Route path="/found" element={<FoundAnimals foundAnimals={foundAnimals} />} />
-                    <Route path="/dog-details/:name" element={<DogDetails animals={[...lostAnimals, ...foundAnimals]} />} />
+                    <Route path="/" element={<LostAnimals 
+                        lostAnimals={dogs} 
+                        setLocationFilter={setLocationFilter} 
+                        setDateFilter={setDateFilter} 
+                        setGenderFilter={setGenderFilter}
+                        setTypeFilter={setTypeFilter}
+                    />} />
+                    <Route path="/found" element={<FoundAnimals 
+                        foundAnimals={foundDogs} 
+                        setLocationFilter={setLocationFilter} 
+                        setDateFilter={setDateFilter} 
+                        setGenderFilter={setGenderFilter}
+                        setTypeFilter={setTypeFilter}
+                    />} />
+                    <Route path="/dog-details/:name" element={<DogDetails animals={dogs.concat(foundDogs)} />} />
                 </Routes>
             </div>
         </Router>

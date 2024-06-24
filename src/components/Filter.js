@@ -38,7 +38,7 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
     };
 
     return (
-        <div className="filters flex justify-center gap-4 mb-4">
+        <div className="filters flex flex-col md:flex-row justify-center gap-4 mb-4">
             <label>
                 위치 필터:
                 <input 
@@ -78,8 +78,8 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
                     className="p-2 border border-gray-300 rounded"
                 >
                     <option value="">All</option>
-                    <option value="개">Dog</option>
-                    <option value="고양이">Cat</option>
+                    <option value="개">개</option>
+                    <option value="고양이">고양이</option>
                 </select>
             </label>
             <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
