@@ -66,7 +66,7 @@ header {
   text-align: left;
   background-color: #fff;
   transition: transform 0.2s;
-  padding: 20px; /* Added padding */
+  padding: 5px; /* Added padding */
   position: relative; /* To position the "더 보기 ..." link */
 }
 
@@ -79,10 +79,12 @@ header {
   margin: 10px 0;
   color: #ff6701;
   text-align: center;
+  font-size: 24px;
 }
 
 .dog-card p {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 .dog-card:hover {
@@ -102,10 +104,14 @@ header {
 }
 
 /* Ensure "카톡 오픈채팅" is in one line */
-.dog-card p[style*="white-space: nowrap;"] {
+.dog-card a[style*="white-space: nowrap;"] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.dog-details h2{
+  color: #ff6701;
 }
 
 .dog-details-content {
@@ -168,7 +174,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 350px) {
   .dog-card {
     max-width: 100%;
   }
@@ -178,11 +184,20 @@ button:hover {
     align-items: center;
   }
   
+  
 }
 
 @media (min-width: 350px) {
   .dog-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .dog-card p {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+  .dog-card h2 {
+    margin: 5px 0;
+    font-size: 18px;
   }
 }
 
@@ -197,11 +212,22 @@ button:hover {
     flex-basis: 100%;
     margin-right: 0;
   }
+
+  
 }
 
 @media (min-width: 768px) {
   .dog-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .dog-card p {
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .dog-card h2 {
+    margin: 8px 0;
+    font-size: 19px;
   }
 }
 
