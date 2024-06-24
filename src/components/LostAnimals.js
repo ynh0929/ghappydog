@@ -51,8 +51,6 @@ const LostAnimals = ({ lostAnimals }) => {
 
     return (
         <div className="container mx-auto px-4">
-            <h1 className="text-center text-2xl font-bold mb-4">지해피독 유실 동물 리스트</h1>
-            <p className="text-center mb-4">지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
             <p className="text-center mb-4"><strong>총 유실동물 수: {filteredAnimals.length}</strong></p>
             <div className="filters mb-4">
                 <Filter 
