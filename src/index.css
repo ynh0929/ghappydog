@@ -84,9 +84,7 @@ header {
   font-size: 16px;
 }
 
-/* .dog-card-info {
-  flex-grow: 1; /* Allow this section to grow and push the link down */
-} */
+
 
 .dog-card .info {
   padding: 5px; /* Add 5px padding to info paragraphs */
