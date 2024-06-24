@@ -84,11 +84,23 @@ header {
 
 .dog-card p {
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.dog-card .info {
+  padding: 5px; /* Add 5px padding to info paragraphs */
 }
 
 .dog-card:hover {
   transform: scale(1.05);
+}
+
+.more-details {
+  position: absolute; /* Align to bottom right */
+  bottom: 10px; /* Adjusted to ensure spacing */
+  right: 10px; /* Adjusted to ensure spacing */
+  color: #007bff;
+  text-decoration: none;
 }
 
 .more-details:hover {
@@ -212,8 +224,8 @@ button:hover {
   }
 
   .dog-card p {
-    margin: 5px 0;
-    font-size: 12px;
+    margin: 8px 0;
+    font-size: 18px;
   }
 
   .dog-card h2 {
