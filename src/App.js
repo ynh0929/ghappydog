@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import DogCard from './components/DogCard';
-import DogDetails from './components/DogDetails';
-import Filter from './components/Filter';
-import LoadCSV from './components/LoadCSV';
-import LostAnimals from './components/LostAnimals';
-import FoundAnimals from './components/FoundAnimals';
+import DogCard from './DogCard';
+import DogDetails from './DogDetails';
+import Filter from './Filter';
+import LoadCSV from './LoadCSV';
+import LostAnimals from './LostAnimals';
+import FoundAnimals from './FoundAnimals';
 import './App.css';
 import './index.css';
 
@@ -22,21 +22,22 @@ const App = () => {
     }, []);
 
     return (
-        <Router>
+        <Router basename="/ghappydog">
             <LoadCSV setLostAnimals={setDogs} setFoundAnimals={setFoundDogs} />
             <div className="container">
                 <header>
                     <h1><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
                     <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
                     <nav className="nav-list">
-                        <Link to="/">유실 동물</Link>
+                        <Link to="/lost">유실동물</Link>
                         <Link to="/found">발견 동물</Link>
                     </nav>
                 </header>
                 <Routes>
-                    <Route path="/" element={<LostAnimals lostAnimals={dogs} />} />
-                    <Route path="/found" element={<LostAnimals lostAnimals={foundDogs} />} />
+                    <Route path="/lost" element={<LostAnimals lostAnimals={dogs} />} />
+                    <Route path="/found" element={<FoundAnimals foundAnimals={foundDogs} />} />
                     <Route path="/dog-details/:name" element={<DogDetails animals={dogs.concat(foundDogs)} />} />
+                    <Route path="/" element={<LostAnimals lostAnimals={dogs} />} />
                 </Routes>
             </div>
         </Router>
