@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import DogCard from './components/DogCard';
-import DogDetails from './components/DogDetails';
-import Filter from './components/Filter';
-import LoadCSV from './components/LoadCSV';
-import './App.css';
+import DogCard from './DogCard';
+import Filter from './Filter';
 
-const LostAnimals = () => {
-    const [dogs, setDogs] = useState([]);
+const LostAnimals = ({ lostAnimals }) => {
     const [locationFilter, setLocationFilter] = useState('');
     const [dateFilter, setDateFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
     const [typeFilter, setTypeFilter] = useState('');
 
-    console.log('Dogs State:', dogs); // Debug: Log dogs state
-
-    const filteredDogs = dogs.filter(dog => {
+    const filteredDogs = lostAnimals.filter(dog => {
         const dateLost = new Date(dog['유실 날짜'].replace(/\./g, '-'));
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
@@ -45,42 +38,29 @@ const LostAnimals = () => {
         return locationMatch && dateMatch && genderMatch && typeMatch;
     });
 
-    console.log('Filtered Dogs:', filteredDogs); // Debug: Log filtered dogs
-
     return (
-        <Router basename="/ghappydog">
-            <LoadCSV setDogs={setDogs} />
-            <div className="container">
-                <header>
-                    <h1><Link to="/" onClick={() => window.location.reload()}>지해피독 유실 동물 리스트</Link></h1>
-                    <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-                    <p><strong>총 유실동물 수: {filteredDogs.length}</strong></p>
-                    <Filter 
-                        setLocationFilter={setLocationFilter} 
-                        setDateFilter={setDateFilter} 
-                        setGenderFilter={setGenderFilter}
-                        setTypeFilter={setTypeFilter}
-                    />
-                </header>
-
-                <Routes>
-                    <Route path="/" element={
-                        <section id="dog-list">
-                            <div className="dog-list">
-                                {filteredDogs.length > 0 ? (
-                                    filteredDogs.map(dog => (
-                                        <DogCard key={dog['이름']} dog={dog} />
-                                    ))
-                                ) : (
-                                    <p>선택한 필터에 해당하는 강아지를 찾을 수 없습니다.</p>
-                                )}
-                            </div>
-                        </section>
-                    } />
-                    <Route path="/dog-details/:name" element={<DogDetails dogs={dogs} />} />
-                </Routes>
-            </div>
-        </Router>
+        <div>
+            <h1>지해피독 유실 동물 리스트</h1>
+            <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
+            <p>총 유실동물 수: {filteredDogs.length}</p>
+            <Filter 
+                setLocationFilter={setLocationFilter} 
+                setDateFilter={setDateFilter} 
+                setGenderFilter={setGenderFilter} 
+                setTypeFilter={setTypeFilter} 
+            />
+            <section id="dog-list">
+                <div className="dog-list">
+                    {filteredDogs.length > 0 ? (
+                        filteredDogs.map(dog => (
+                            <DogCard key={dog['이름']} dog={dog} />
+                        ))
+                    ) : (
+                        <p>선택한 필터에 맞는 강아지가 없습니다.</p>
+                    )}
+                </div>
+            </section>
+        </div>
     );
 };
 
