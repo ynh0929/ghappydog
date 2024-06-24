@@ -50,8 +50,11 @@ const LostAnimals = ({ lostAnimals }) => {
                 setGenderFilter={setGenderFilter} 
                 setTypeFilter={setTypeFilter} 
             />
+            <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4" onClick={() => { setLocationFilter(''); setDateFilter(''); setGenderFilter(''); setTypeFilter(''); }}>
+                필터 초기화
+            </button>
             <section id="dog-list">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {filteredDogs.length > 0 ? (
                         filteredDogs.map(dog => (
                             <DogCard key={dog['이름']} dog={dog} />
