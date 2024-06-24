@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import DogCard from './components/DogCard'
 import DogDetails from './components/DogDetails';
 import Filter from './components/Filter';
-import LoadCSV from './LoadCSV';
+import LoadCSV from './components/LoadCSV';
 import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
 import './App.css';
