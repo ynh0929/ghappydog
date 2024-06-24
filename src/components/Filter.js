@@ -1,24 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter }) => {
-    const handleLocationChange = (e) => setLocationFilter(e.target.value);
-    const handleDateChange = (e) => setDateFilter(e.target.value);
-    const handleGenderChange = (e) => setGenderFilter(e.target.value);
-    const handleTypeChange = (e) => setTypeFilter(e.target.value);
+    const [location, setLocation] = useState('');
+    const [date, setDate] = useState('');
+    const [gender, setGender] = useState('');
+    const [type, setType] = useState('');
+
+    const handleLocationChange = (e) => {
+        setLocation(e.target.value);
+        setLocationFilter(e.target.value);
+    };
+
+    const handleDateChange = (e) => {
+        setDate(e.target.value);
+        setDateFilter(e.target.value);
+    };
+
+    const handleGenderChange = (e) => {
+        setGender(e.target.value);
+        setGenderFilter(e.target.value);
+    };
+
+    const handleTypeChange = (e) => {
+        setType(e.target.value);
+        setTypeFilter(e.target.value);
+    };
+
+    const resetFilters = () => {
+        setLocation('');
+        setDate('');
+        setGender('');
+        setType('');
+        setLocationFilter('');
+        setDateFilter('');
+        setGenderFilter('');
+        setTypeFilter('');
+    };
 
     return (
-        <div className="filters">
+        <div className="filters flex justify-center gap-4 mb-4">
             <label>
                 위치 필터:
-                <input type="text" onChange={handleLocationChange} />
+                <input 
+                    type="text" 
+                    value={location}
+                    onChange={handleLocationChange} 
+                    className="p-2 border border-gray-300 rounded" 
+                />
             </label>
             <label>
                 유실 날짜 필터:
-                <input type="text" placeholder="yyyy, yyyy-mm, yyyy-mm-dd" onChange={handleDateChange} />
+                <input 
+                    type="text" 
+                    placeholder="yyyy, yyyy-mm, yyyy-mm-dd" 
+                    value={date}
+                    onChange={handleDateChange} 
+                    className="p-2 border border-gray-300 rounded" 
+                />
             </label>
             <label>
                 성별 필터:
-                <select onChange={handleGenderChange}>
+                <select 
+                    value={gender}
+                    onChange={handleGenderChange} 
+                    className="p-2 border border-gray-300 rounded"
+                >
                     <option value="">All</option>
                     <option value="암">암</option>
                     <option value="수">수</option>
@@ -26,12 +72,17 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
             </label>
             <label>
                 종류 필터:
-                <select onChange={handleTypeChange}>
+                <select 
+                    value={type}
+                    onChange={handleTypeChange} 
+                    className="p-2 border border-gray-300 rounded"
+                >
                     <option value="">All</option>
-                    <option value="개">개</option>
-                    <option value="고양이">고양이</option>
+                    <option value="개">Dog</option>
+                    <option value="고양이">Cat</option>
                 </select>
             </label>
+            <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
         </div>
     );
 };

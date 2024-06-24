@@ -13,7 +13,7 @@ const App = () => {
     return (
         <Router basename="/ghappydog">
             <LoadCSV setLostAnimals={setLostAnimals} setFoundAnimals={setFoundAnimals} />
-            <div className="container">
+            <div className="container mx-auto p-4 bg-white shadow-lg rounded-lg mt-4">
                 <header className="mb-4">
                     <nav className="flex justify-between items-center bg-blue-500 text-white p-4 rounded">
                         <ul className="flex space-x-4">
@@ -26,7 +26,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<LostAnimals lostAnimals={lostAnimals} />} />
                     <Route path="/found" element={<FoundAnimals foundAnimals={foundAnimals} />} />
-                    <Route path="/dog-details/:name" element={<DogDetails animals={lostAnimals} />} />
+                    <Route path="/dog-details/:name" element={<DogDetails animals={[...lostAnimals, ...foundAnimals]} />} />
                 </Routes>
             </div>
         </Router>

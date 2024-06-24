@@ -6,6 +6,18 @@ const FoundAnimals = ({ foundAnimals }) => {
     const [locationFilter, setLocationFilter] = useState('');
     const [dateFilter, setDateFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
+    const [typeFilter, setTypeFilter] = useState('');
+
+    const applyFilters = () => {
+        // We don't need to set filtersApplied because the filters are always applied
+    };
+
+    const resetFilters = () => {
+        setLocationFilter('');
+        setDateFilter('');
+        setGenderFilter('');
+        setTypeFilter('');
+    };
 
     const filteredAnimals = foundAnimals.filter(animal => {
         const dateFound = new Date(animal['발견 날짜'].replace(/\./g, '-'));
@@ -29,27 +41,39 @@ const FoundAnimals = ({ foundAnimals }) => {
             genderFilter === ''
         );
 
-        return locationMatch && dateMatch && genderMatch;
+        const typeMatch = (
+            animal['종류'] === typeFilter || 
+            typeFilter === ''
+        );
+
+        return locationMatch && dateMatch && genderMatch && typeMatch;
     });
 
     return (
         <div>
-            <h1 className="text-2xl font-bold mb-4">지해피독 발견된 동물 리스트</h1>
-            <p className="mb-4">지해피독에 오신 것을 환영합니다. 여기서 발견된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
-            <p className="font-bold mb-4">총 발견동물 수: {filteredAnimals.length}</p>
-            <Filter 
-                setLocationFilter={setLocationFilter} 
-                setDateFilter={setDateFilter} 
-                setGenderFilter={setGenderFilter}
-            />
+            <h1 className="text-center text-2xl font-bold mb-4">지해피독 발견된 동물 리스트</h1>
+            <p className="text-center mb-4">지해피독에 오신 것을 환영합니다. 여기서 발견된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
+            <p className="text-center mb-4"><strong>총 발견동물 수: {filteredAnimals.length}</strong></p>
+            <div className="filters mb-4">
+                <Filter 
+                    setLocationFilter={setLocationFilter} 
+                    setDateFilter={setDateFilter} 
+                    setGenderFilter={setGenderFilter}
+                    setTypeFilter={setTypeFilter}
+                />
+                <div className="my-4 flex justify-center gap-4">
+                    <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
+                    <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
+                </div>
+            </div>
             <section id="dog-list">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {filteredAnimals.length > 0 ? (
                         filteredAnimals.map(animal => (
                             <DogCard key={animal['이름']} dog={animal} />
                         ))
                     ) : (
-                        <p>선택한 필터에 맞는 강아지가 없습니다.</p>
+                        <p className="text-center">선택한 필터에 맞는 강아지가 없습니다.</p>
                     )}
                 </div>
             </section>

@@ -6,7 +6,7 @@ const DogDetails = ({ dogs }) => {
     const dog = dogs.find(dog => dog['이름'] === name);
 
     if (!dog) {
-        return <p>Dog not found.</p>;
+        return <p>동물을 찾을 수 없습니다.</p>;
     }
 
    // const imageUrl = dog['이미지'] ? `${process.env.PUBLIC_URL}/images/${dog['이미지']}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
