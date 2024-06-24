@@ -38,33 +38,18 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
     };
 
     return (
-        <div className="filters flex flex-col md:flex-row justify-center gap-4 mb-4">
+        <div className="filter">
             <label>
                 위치 필터:
-                <input 
-                    type="text" 
-                    value={location}
-                    onChange={handleLocationChange} 
-                    className="p-2 border border-gray-300 rounded" 
-                />
+                <input type="text" value={location} onChange={handleLocationChange} />
             </label>
             <label>
                 유실 날짜 필터:
-                <input 
-                    type="text" 
-                    placeholder="yyyy, yyyy-mm, yyyy-mm-dd" 
-                    value={date}
-                    onChange={handleDateChange} 
-                    className="p-2 border border-gray-300 rounded" 
-                />
+                <input type="text" placeholder="yyyy, yyyy-mm, yyyy-mm-dd" value={date} onChange={handleDateChange} />
             </label>
             <label>
                 성별 필터:
-                <select 
-                    value={gender}
-                    onChange={handleGenderChange} 
-                    className="p-2 border border-gray-300 rounded"
-                >
+                <select value={gender} onChange={handleGenderChange}>
                     <option value="">All</option>
                     <option value="암">암</option>
                     <option value="수">수</option>
@@ -72,17 +57,13 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
             </label>
             <label>
                 종류 필터:
-                <select 
-                    value={type}
-                    onChange={handleTypeChange} 
-                    className="p-2 border border-gray-300 rounded"
-                >
+                <select value={type} onChange={handleTypeChange}>
                     <option value="">All</option>
                     <option value="개">개</option>
                     <option value="고양이">고양이</option>
                 </select>
             </label>
-            <button onClick={resetFilters} className="bg-gray-500 text-white py-2 px-4 rounded">필터 초기화</button>
+            <button onClick={resetFilters}>필터 초기화</button>
         </div>
     );
 };
