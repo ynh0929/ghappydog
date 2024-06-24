@@ -63,7 +63,10 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
                     <option value="고양이">고양이</option>
                 </select>
             </label>
-            <button onClick={resetFilters}>필터 초기화</button>
+            <div className="filter-buttons">
+                <button onClick={resetFilters}>필터 초기화</button>
+                <button onClick={applyFilters}>필터 적용</button>
+            </div>
         </div>
     );
 };
