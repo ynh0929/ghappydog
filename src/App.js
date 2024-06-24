@@ -4,7 +4,7 @@ import LostAnimals from './components/LostAnimals';
 import FoundAnimals from './components/FoundAnimals';
 import DogDetails from './components/DogDetails';
 import LoadCSV from './components/LoadCSV';
-import './styles/tailwind.css';
+import './input.css';
 
 const App = () => {
     const [lostAnimals, setLostAnimals] = useState([]);
