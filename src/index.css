@@ -202,18 +202,24 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+  header h1 a{
+    font-size: 28px;
+  }
+  header p{
+    font-size: 13px;
+  }
   .dog-list {
     grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
   }
 
   .filter {
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
   }
 
   .filter-buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
   }
 
   .dog-card p {
