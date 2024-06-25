@@ -51,7 +51,7 @@ const FoundAnimals = ({ foundAnimals }) => {
 
     return (
         <div className="container mx-auto px-4">
-            <p className="text-center mb-4"><strong>총 발견된 동물 수: {filteredAnimals.length}</strong></p>
+            <p className="text-center mb-4"><strong>총 찾은 동물 수: {filteredAnimals.length}</strong></p>
             <div className="filters mb-4">
                 <Filter 
                     setLocationFilter={setLocationFilter} 
