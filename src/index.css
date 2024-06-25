@@ -148,7 +148,7 @@ header {
   display: block;
   margin: 0 auto; /* Center the image */
 }
-
+/* 
 .filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -180,7 +180,7 @@ header {
   margin-top: 10px;
 }
 
-nput[type="text"],
+input[type="text"],
 select {
   padding: 5px;
   border: 1px solid #ccc;
@@ -199,6 +199,72 @@ button {
 
 button:hover {
   background-color: #0056b3;
+} */
+/* Existing CSS from index.css with modifications */
+.filter-container {
+  display: flex;
+  flex-direction: column; /* Change direction to column for better stacking */
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column; /* Ensure filters stack vertically */
+  gap: 10px;
+  width: 100%; /* Ensure full width on mobile */
+  align-items: center; /* Center align items */
+}
+
+.filter label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensure full width */
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px;
+  width: 100%; /* Ensure full width */
+  align-items: center; /* Center align buttons */
+  margin-top: 10px;
+}
+
+input[type="text"],
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  width: 90%; /* Ensure inputs are 90% width */
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 90%; /* Ensure buttons are 90% width */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .filter {
+    flex-direction: column;
+    align-items: center; /* Ensure center alignment */
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center; /* Ensure center alignment */
+  }
 }
 
 @media (max-width: 600px) {

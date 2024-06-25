@@ -1,3 +1,5 @@
+// Filter.js with minor JSX adjustments to match the new CSS
+
 import React, { useState } from 'react';
 
 const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter }) => {
