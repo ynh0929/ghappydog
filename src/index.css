@@ -255,17 +255,6 @@ button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
-  .filter {
-    flex-direction: column;
-    align-items: center; /* Ensure center alignment */
-  }
-
-  .filter-buttons {
-    flex-direction: column;
-    align-items: center; /* Ensure center alignment */
-  }
-}
 
 @media (max-width: 600px) {
   header h1 a{
@@ -280,12 +269,12 @@ button:hover {
 
   .filter {
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
   }
 
   .filter-buttons {
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
   }
 
   .dog-card p {
@@ -315,6 +304,36 @@ button:hover {
   .dog-details-image {
     flex-basis: 100%;
     margin-right: 0;
+  }
+}
+
+
+@media (min-width: 601px) {
+  .filter-container {
+    flex-direction: column;
+  }
+
+  .filter {
+    flex-direction: row; /* Align filters in a row on larger screens */
+    justify-content: space-around; /* Space out the filter items */
+    width: 100%; /* Ensure the filter container is full width */
+  }
+
+  .filter label {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto; /* Let the labels adjust to content */
+  }
+
+  .filter-buttons {
+    flex-direction: row; /* Align buttons in a row on larger screens */
+    justify-content: center; /* Center the buttons */
+    width: 100%; /* Ensure buttons container is full width */
+    margin-top: 10px;
+  }
+
+  button {
+    width: auto; /* Let the buttons adjust to content */
   }
 }
 
