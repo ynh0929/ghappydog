@@ -19,8 +19,8 @@ const FoundAnimals = ({ foundAnimals }) => {
         setTypeFilter('');
     };
 
-    const filteredAnimals = foundAnimals.filter(animal => {
-        const dateFound = new Date(animal['유실 날짜'].replace(/\./g, '-'));
+    const filteredAnimals = lostAnimals.filter(animal => {
+        const dateLost = new Date(animal['유실 날짜'].replace(/\./g, '-'));
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
         const locationMatch = (
@@ -31,9 +31,9 @@ const FoundAnimals = ({ foundAnimals }) => {
         );
 
         const dateMatch = !dateFilter || (
-            (filterYear && dateFound.getFullYear() === filterYear) &&
-            (!filterMonth || dateFound.getMonth() + 1 === filterMonth) &&
-            (!filterDay || dateFound.getDate() === filterDay)
+            (filterYear && dateLost.getFullYear() === filterYear) &&
+            (!filterMonth || dateLost.getMonth() + 1 === filterMonth) &&
+            (!filterDay || dateLost.getDate() === filterDay)
         );
 
         const genderMatch = (
