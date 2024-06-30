@@ -143,64 +143,13 @@ header {
 
 .dog-details-img {
   width: 100%;
-  max-width: 400px; /* Adjust the maximum width as needed */
+  max-width: 300px; /* Adjust the maximum width as needed */
+  border-radius: 10px;
   height: auto;
   display: block;
   margin: 0 auto; /* Center the image */
 }
-/* 
-.filter-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
-  align-items: center;
-}
 
-.filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.filter label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  flex: 1 1 100%;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-input[type="text"],
-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-  width: 100%;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-} */
-/* Existing CSS from index.css with modifications */
 .filter-container {
   display: flex;
   flex-direction: column; /* Change direction to column for better stacking */
@@ -260,6 +209,7 @@ button:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   justify-content: center; /* Center the grid */
+  margin-top: 100px; /* Add space between the images and the details */
 }
 
 .additional-image {

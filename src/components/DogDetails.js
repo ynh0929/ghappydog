@@ -40,6 +40,7 @@ const DogDetails = ({ animals }) => {
                     <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
                 </div>
             </div>
+            <p><strong>상세 이미지: </strong></p><br />
             <div className="additional-images mt-4">
                 {additionalImages.map((img, index) => (
                     <img key={index} src={img} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-image rounded shadow-lg" />
