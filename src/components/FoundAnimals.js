@@ -19,7 +19,7 @@ const FoundAnimals = ({ foundAnimals }) => {
         setTypeFilter('');
     };
 
-    const filteredAnimals = lostAnimals.filter(animal => {
+    const filteredAnimals = foundAnimals.filter(animal => {
         const dateLost = new Date(animal['유실 날짜'].replace(/\./g, '-'));
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
