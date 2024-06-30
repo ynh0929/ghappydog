@@ -337,10 +337,26 @@ button:hover {
   }
 }
 
+.additional-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.additional-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 @media (min-width: 768px) {
   .dog-list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .additional-images {
+    grid-template-columns: repeat(4, 1fr);
+}
 }
 
 @media (min-width: 1024px) {

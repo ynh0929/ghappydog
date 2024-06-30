@@ -13,6 +13,14 @@ const DogDetails = ({ animals }) => {
         ? `${process.env.PUBLIC_URL}/images/${dog['이미지'].replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}`
         : `${process.env.PUBLIC_URL}/images/default_photo.jpg`;
 
+    // Assuming you have additional image URLs in the data
+    const additionalImages = [
+        dog['추가 이미지1'],
+        dog['추가 이미지2'],
+        dog['추가 이미지3'],
+        dog['추가 이미지4']
+    ].map(image => image ? `${process.env.PUBLIC_URL}/images/closeup/${image.replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}` : null);
+
     return (
         <div className="dog-details container mx-auto p-4">
             <div className="dog-details-content">
@@ -31,6 +39,11 @@ const DogDetails = ({ animals }) => {
                 <div className="dog-details-image">
                     <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
                 </div>
+            </div>
+            <div className="additional-images">
+                {additionalImages.map((image, index) => image && (
+                    <img key={index} src={image} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-img" />
+                ))}
             </div>
         </div>
     );
