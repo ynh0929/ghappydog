@@ -20,7 +20,10 @@ const FoundAnimals = ({ foundAnimals }) => {
     };
 
     const filteredAnimals = foundAnimals.filter(animal => {
-        const dateLost = new Date(animal['유실 날짜'].replace(/\./g, '-'));
+        if (!animal || !animal['유실 날짜']) {
+            return false;
+        }
+        const dateFound = new Date(animal['유실 날짜'].replace(/\./g, '-'));
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
         const locationMatch = (
@@ -31,9 +34,9 @@ const FoundAnimals = ({ foundAnimals }) => {
         );
 
         const dateMatch = !dateFilter || (
-            (filterYear && dateLost.getFullYear() === filterYear) &&
-            (!filterMonth || dateLost.getMonth() + 1 === filterMonth) &&
-            (!filterDay || dateLost.getDate() === filterDay)
+            (filterYear && dateFound.getFullYear() === filterYear) &&
+            (!filterMonth || dateFound.getMonth() + 1 === filterMonth) &&
+            (!filterDay || dateFound.getDate() === filterDay)
         );
 
         const genderMatch = (
@@ -51,7 +54,7 @@ const FoundAnimals = ({ foundAnimals }) => {
 
     return (
         <div className="container mx-auto px-4">
-            <p className="text-center mb-4"><strong>총 찾은 동물 수: {filteredAnimals.length}</strong></p>
+            <p className="text-center mb-4"><strong>총 발견된 동물 수: {filteredAnimals.length}</strong></p>
             <div className="filters mb-4">
                 <Filter 
                     setLocationFilter={setLocationFilter} 
@@ -59,9 +62,6 @@ const FoundAnimals = ({ foundAnimals }) => {
                     setGenderFilter={setGenderFilter}
                     setTypeFilter={setTypeFilter}
                 />
-                {/* <div className="my-4 flex justify-center gap-4">
-                    <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
-                </div> */}
             </div>
             <section id="dog-list">
                 <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
