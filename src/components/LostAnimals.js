@@ -19,7 +19,7 @@ const LostAnimals = ({ lostAnimals }) => {
         setTypeFilter('');
     };
 
-    const filteredAnimals = LostAnimals.filter(animal => {
+    const filteredAnimals = lostAnimals.filter(animal => {
         if (!animal || !animal['유실 날짜']) {
             return false;
         }
@@ -62,9 +62,6 @@ const LostAnimals = ({ lostAnimals }) => {
                     setGenderFilter={setGenderFilter}
                     setTypeFilter={setTypeFilter}
                 />
-                {/* <div className="my-4 flex justify-center gap-4">
-                    <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
-                </div> */}
             </div>
             <section id="dog-list">
                 <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
