@@ -8,6 +8,10 @@ const LostAnimals = ({ lostAnimals }) => {
     const [genderFilter, setGenderFilter] = useState('');
     const [typeFilter, setTypeFilter] = useState('');
 
+    const applyFilters = () => {
+        // Filters are always applied through state changes
+    };
+
     const resetFilters = () => {
         setLocationFilter('');
         setDateFilter('');
@@ -55,6 +59,9 @@ const LostAnimals = ({ lostAnimals }) => {
                     setGenderFilter={setGenderFilter}
                     setTypeFilter={setTypeFilter}
                 />
+                {/* <div className="my-4 flex justify-center gap-4">
+                    <button onClick={applyFilters} className="bg-blue-500 text-white py-2 px-4 rounded">필터 적용</button>
+                </div> */}
             </div>
             <section id="dog-list">
                 <div className="dog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

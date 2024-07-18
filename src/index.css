@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Avenir-Light';
+  src: url('https://ynh0929.github.io/ghappydog/Avenir-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
