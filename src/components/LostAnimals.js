@@ -19,7 +19,7 @@ const LostAnimals = ({ lostAnimals }) => {
         setTypeFilter('');
     };
 
-    const filteredAnimals = foundAnimals.filter(animal => {
+    const filteredAnimals = LostAnimals.filter(animal => {
         if (!animal || !animal['유실 날짜']) {
             return false;
         }
