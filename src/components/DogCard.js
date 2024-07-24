@@ -14,7 +14,7 @@ const DogCard = ({ dog }) => {
                 <p className="info"><strong>유실 날짜:</strong> {dog['유실 날짜']}</p>
                 <p className="info"><strong>성별:</strong> {dog['성별']}</p>
                 <p className="info"><strong>견종/묘종:</strong> {dog['견종/묘종']}</p>
-                <p className="info"><strong>유실 장소:</strong> {dog['시, 군, 구']}, {dog['동, 읍, 면']}, {dog['세부 주소']}</p>
+                <p className="info"><strong>유실 장소:</strong> {dog['도']} {dog['시, 군, 구']} {dog['동, 읍, 면']} {dog['세부 주소']}</p>
                 {dog['URL'] && (
                     <p className="info">
                         <strong>카톡 오픈채팅:</strong>
