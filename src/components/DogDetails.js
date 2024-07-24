@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import './DogDetails.css'; // Create and import a CSS file for styling
 
 const DogDetails = ({ animals }) => {
     const { name } = useParams();
