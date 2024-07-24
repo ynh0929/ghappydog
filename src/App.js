@@ -30,7 +30,7 @@ const App = () => {
                     <p>지해피독에 오신 것을 환영합니다. 여기서 유실된 강아지 정보를 찾고 주인과 다시 만날 수 있도록 도와주세요.</p>
                     <nav className="nav-list">
                         <Link to="/lost">유실 동물</Link>
-                        <Link to="/found">귀가 동물</Link>
+                        <Link to="/found">완료 동물</Link>
                     </nav>
                 </header>
                 <Routes>
