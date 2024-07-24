@@ -31,7 +31,7 @@ const DogDetails = ({ animals }) => {
                         <tr>
                             <td><strong>유실 날짜:</strong></td>
                             <td>{dog['유실 날짜']}</td>
-                            <td rowSpan="8" className="dog-details-image">
+                            <td rowSpan="8" className="dog-details-image" border="none">
                                 <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
                             </td>
                         </tr>
