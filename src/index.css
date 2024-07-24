@@ -117,12 +117,39 @@ header {
   max-width: 100%;
 }
 
+.dog-details {
+  font-family: 'Arial, sans-serif';
+  color: #333;
+}
+
 .dog-details h2{
   color: #ff6701;
 }
 
 .dog-details p{
   font-size: 16px;
+}
+
+.dog-details-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dog-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.dog-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.dog-details-table td strong {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .dog-details-content {
@@ -150,6 +177,24 @@ header {
   margin: 0 auto; /* Center the image */
 }
 
+.additional-images-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.additional-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.additional-image {
+  max-width: 100px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .filter-container {
   display: flex;
   flex-direction: column; /* Change direction to column for better stacking */
