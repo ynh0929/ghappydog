@@ -12,7 +12,7 @@ const DogCard = ({ dog }) => {
             <h2>{dog['이름']}</h2>
             <div className="dog-card-info">
                 <p className="info"><strong>유실 날짜:</strong> {dog['유실 날짜']}</p>
-                <p className="info"><strong>성별:</strong> {dog['성별']}</p>
+                <p className="info"><strong>성별 (중성화):</strong> {dog['성별']} ({dog['중성화']})</p>
                 <p className="info"><strong>견종/묘종:</strong> {dog['견종/묘종']}</p>
                 <p className="info"><strong>유실 장소:</strong> {dog['도']} {dog['시, 군, 구']} {dog['동, 읍, 면']} {dog['세부 주소']}</p>
                 {dog['URL'] && (

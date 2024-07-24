@@ -36,8 +36,8 @@ const DogDetails = ({ animals }) => {
                             </td>
                         </tr>
                         <tr>
-                            <td><strong>성별:</strong></td>
-                            <td>{dog['성별']}</td>
+                            <td><strong>성별 (중성화):</strong></td>
+                            <td>{dog['성별']} ({dog['중성화']})</td>
                         </tr>
                         <tr>
                             <td><strong>견종/묘종:</strong></td>
