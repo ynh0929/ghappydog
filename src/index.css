@@ -317,20 +317,19 @@ button:hover {
 }
 
 .dog-details-table td {
-    display: block;
+    display: contents;
     width: 100%;
     border: none;
     padding: 8px 0;
 }
 
+.dog-details-table tr {
+  padding: 8px 0;
+}
 .dog-details-table td strong {
     display: inline-block;
-    width: 30%;
+    width: 40%;
     margin-right: 10px;
-}
-
-.dog-details-table td:last-child {
-    margin-top: 20px;
 }
 
   .dog-details-info,

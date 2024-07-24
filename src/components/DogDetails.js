@@ -29,11 +29,11 @@ const DogDetails = ({ animals }) => {
                 <table className="dog-details-table">
                     <tbody>
                         <tr>
-                            <td><strong>유실 날짜:</strong></td>
-                            <td>{dog['유실 날짜']}</td>
                             <td rowSpan="8" className="dog-details-image" border="none">
                                 <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
                             </td>
+                            <td><strong>유실 날짜:</strong></td>
+                            <td>{dog['유실 날짜']}</td>
                         </tr>
                         <tr>
                             <td><strong>성별 (중성화):</strong></td>
