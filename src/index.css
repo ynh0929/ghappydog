@@ -160,24 +160,23 @@ header {
 
 
 .dog-details-info {
-  width: 60%;
+  width: 55%;
   padding-right: 20px;
 }
 
 .dog-details-image {
-  width: 40%;
+  width: 45%;
   text-align: center;
 }
 
 .dog-details-img {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 10px;
   height: auto;
   display: block;
   margin: 0 auto;
   border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .additional-images-section {
@@ -189,7 +188,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
 }
 
 .additional-image {
