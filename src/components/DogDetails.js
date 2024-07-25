@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const DogDetails = ({ animals }) => {
     const { name } = useParams();
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const dog = animals.find(dog => dog['이름'] === name);
 
     if (!dog) {
@@ -18,9 +20,16 @@ const DogDetails = ({ animals }) => {
         dog['추가 이미지2'],
         dog['추가 이미지3'],
         dog['추가 이미지4']
-    ]
-    .filter(image => image)
-    .map(image => image ? `${process.env.PUBLIC_URL}/images/closeup/${image.replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`);
+    ].filter(image => image) // Filter out empty entries
+     .map(image => `${process.env.PUBLIC_URL}/images/closeup/${image.replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}`);
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+    };
 
     return (
         <div className="dog-details container mx-auto p-4">
@@ -43,10 +52,10 @@ const DogDetails = ({ animals }) => {
                                 <p><strong>인식칩:</strong> {dog['인식칩']}</p>
                             </td>
                             <td className="dog-details-image">
-                                <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
+                                <img src={imageUrl} alt={dog['이름']} className="dog-details-img" onClick={() => handleImageClick(imageUrl)} />
                                 <div className="additional-images">
                                     {additionalImages.map((img, index) => (
-                                        <img key={index} src={img} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-image rounded shadow-lg" />
+                                        <img key={index} src={img} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-image rounded shadow-lg" onClick={() => handleImageClick(img)} />
                                     ))}
                                 </div>
                             </td>
@@ -54,6 +63,13 @@ const DogDetails = ({ animals }) => {
                     </tbody>
                 </table>
             </div>
+
+            {selectedImage && (
+                <div className="modal" onClick={handleCloseModal}>
+                    <span className="close" onClick={handleCloseModal}>&times;</span>
+                    <img className="modal-content" src={selectedImage} alt="Zoomed" />
+                </div>
+            )}
         </div>
     );
 };
