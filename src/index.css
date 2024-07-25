@@ -261,7 +261,7 @@ button:hover {
 
 .additional-image {
   width: 100%;
-  max-width: 200px; /* Set the maximum width */
+  max-width: 100%; /* Set the maximum width */
   height: auto;
   border-radius: 10px;
   object-fit: cover;
