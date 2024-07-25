@@ -18,7 +18,9 @@ const DogDetails = ({ animals }) => {
         dog['추가 이미지2'],
         dog['추가 이미지3'],
         dog['추가 이미지4']
-    ].map(image => image ? `${process.env.PUBLIC_URL}/images/closeup/${image.replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`);
+    ]
+    .filter(image => image)
+    .map(image => image ? `${process.env.PUBLIC_URL}/images/closeup/${image.replace(/\.([a-zA-Z]+)$/, match => match.toLowerCase())}` : `${process.env.PUBLIC_URL}/images/default_photo.jpg`);
 
     return (
         <div className="dog-details container mx-auto p-4">
@@ -42,18 +44,15 @@ const DogDetails = ({ animals }) => {
                             </td>
                             <td className="dog-details-image">
                                 <img src={imageUrl} alt={dog['이름']} className="dog-details-img" />
+                                <div className="additional-images">
+                                    {additionalImages.map((img, index) => (
+                                        <img key={index} src={img} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-image rounded shadow-lg" />
+                                    ))}
+                                </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div className="additional-images-section">
-                <p><strong>상세 이미지: </strong></p><br />
-                <div className="additional-images mt-4">
-                    {additionalImages.map((img, index) => (
-                        <img key={index} src={img} alt={`${dog['이름']} 추가 이미지 ${index + 1}`} className="additional-image rounded shadow-lg" />
-                    ))}
-                </div>
             </div>
         </div>
     );

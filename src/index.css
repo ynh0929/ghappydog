@@ -177,17 +177,7 @@ header {
   display: block;
   margin: 0 auto;
   border: none;
-}
-
-.additional-images-section {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.additional-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .additional-image {
