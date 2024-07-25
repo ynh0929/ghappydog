@@ -180,22 +180,21 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+
 .additional-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .additional-image {
-  max-width: 100px;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 
 .filter-container {
   display: flex;
@@ -251,22 +250,6 @@ button:hover {
   background-color: #0056b3;
 }
 
-.additional-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  justify-content: center; /* Center the grid */
-  margin-bottom: 50px;
-}
-
-.additional-image {
-  width: 100%;
-  max-width: 100%; /* Set the maximum width */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin: 0 auto; /* Center the images within their grid cells */
-}
 
 @media (max-width: 600px) {
   header h1 a{
@@ -346,6 +329,8 @@ button:hover {
     flex-basis: 100%;
     margin-right: 0;
   }
+
+  
 }
 
 
@@ -376,22 +361,36 @@ button:hover {
   button {
     width: auto; /* Let the buttons adjust to content */
   }
+
+  .additional-images {
+    display: grid;
+    margin-top: 20px; 
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .additional-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .additional-images.two-images {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.additional-images {
-  display: grid;
-  margin-top: 20px; 
-  grid-template-columns: repeat(1, 1fr);
-  max-width: 100%;
-  gap: 10px;
+.additional-images.three-images {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.additional-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+.additional-images.four-images {
+    grid-template-columns: repeat(4, 1fr);
 }
+}
+
+
 
 @media (min-width: 768px) {
   .dog-list {
@@ -412,7 +411,6 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
   }
   .additional-images {
-    display: grid;
     margin-top: 20px; 
     max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
