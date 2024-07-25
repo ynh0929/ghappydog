@@ -377,17 +377,6 @@ button:hover {
     border-radius: 10px;
     object-fit: cover;
   }
-  .additional-images.two-images {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.additional-images.three-images {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.additional-images.four-images {
-    grid-template-columns: repeat(4, 1fr);
-}
 }
 
 
@@ -415,6 +404,17 @@ button:hover {
     max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
    }
+   .additional-images.two-images {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.additional-images.three-images {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.additional-images.four-images {
+    grid-template-columns: repeat(4, 1fr);
+}
 }
 
 /* Modal styles */
