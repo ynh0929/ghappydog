@@ -160,12 +160,12 @@ header {
 
 
 .dog-details-info {
-  width: 50%;
+  width: 35%;
   padding-right: 20px;
 }
 
 .dog-details-image {
-  width: 50%;
+  width: 65%;
   text-align: center;
 }
 
@@ -388,7 +388,7 @@ button:hover {
   }
   .additional-images {
     margin-top: 20px; 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
    }
 
 }
@@ -397,4 +397,8 @@ button:hover {
   .dog-list {
     grid-template-columns: repeat(4, 1fr);
   }
+  .additional-images {
+    margin-top: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+   }
 }
