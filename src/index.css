@@ -382,6 +382,7 @@ button:hover {
   display: grid;
   margin-top: 20px; 
   grid-template-columns: repeat(1, 1fr);
+  max-width: 100%;
   gap: 10px;
 }
 
@@ -397,8 +398,11 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
   }
   .additional-images {
+    display: grid;
     margin-top: 20px; 
     grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    gap: 10px;
    }
 
 }
@@ -408,7 +412,9 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
   }
   .additional-images {
+    display: grid;
     margin-top: 20px; 
+    max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
    }
 }
