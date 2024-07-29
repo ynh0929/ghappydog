@@ -173,7 +173,7 @@ header p {
 
 .value {
   flex-basis: 60%;
-  text-align: legt;
+  text-align: left;
 }
 
 .actions-container {
@@ -184,16 +184,16 @@ header p {
 }
 
 .action-link {
-  color: #007bff;
+  color: #e0e0e0;
   text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid #007bff;
+  padding: 5px 10px;
+  border: 1px solid #e0e0e0;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .action-link:hover {
-  background-color: #007bff;
+  background-color: #e0e0e0;
   color: white;
 }
 
