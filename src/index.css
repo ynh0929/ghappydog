@@ -92,65 +92,105 @@ header p {
   grid-template-columns: repeat(2, 1fr); /* Default to 2 columns */
 }
 
+/* index.css */
+
+/* Dog card styles */
 .dog-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  /* max-width: 200px; */
-  text-align: left;
-  background-color: #fff;
-  transition: transform 0.2s;
-  /* padding: 20px; Added padding */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures proper spacing between elements */
-}
-
-.dog-card img {
-  width: 100%;
-  height: auto;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
-  padding: 5px;
-}
-
-.dog-card h2 {
-  margin: 10px 0;
-  color: #ff6701;
-  text-align: center;
-  font-size: 22px;
-}
-
-.dog-card p {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-
-
-.dog-card .info {
-  padding: 5px; /* Add 5px padding to info paragraphs */
-  margin: 5px 0;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 0;
 }
 
 .dog-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dog-image-container {
+  position: relative;
+}
+
+.dog-image {
+  width: 100%;
+  height: auto;
+}
+
+.date-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #29a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.date-label span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.date-label small {
+  display: block;
+  font-size: 0.8em;
+}
+
+.dog-info {
+  padding: 20px;
+}
+
+.dog-info h2 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.dog-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.label {
+  color: gray;
+  flex-basis: 40%;
+}
+
+.value {
+  flex-basis: 60%;
+  text-align: right;
 }
 
 .more-details-container {
-  display: flex;
-  justify-content: flex-end; /* Aligns the link to the bottom right */
+  margin-top: 10px;
 }
 
 .more-details {
   color: #007bff;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .more-details:hover {
-  text-decoration: underline;
+  background-color: #007bff;
+  color: white;
 }
+
 
 /* Ensure "카톡 오픈채팅" link wraps to the next line */
 .dog-card a {
@@ -300,7 +340,7 @@ button:hover {
   header p{
     font-size: 13px;
   }
-  
+
   .logo {
     display: block;
     margin: 0 auto 10px;
