@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ghappydog/precache-manifest.f075d321d74d0abd0e188cd35948266b.js"
+  "/ghappydog/precache-manifest.185762506ad3fc8e58c2aba34c0c584b.js"
 );
 
 self.addEventListener('message', (event) => {
