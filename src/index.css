@@ -71,16 +71,13 @@ header p {
 
 .nav-list a:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Use a transparent white */
-  color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list a::after {
-  content: '';
   display: block;
   width: 0;
   height: 2px;
-  background: white;
   transition: width 0.3s;
 }
 
