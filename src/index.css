@@ -144,7 +144,7 @@ header p {
 }
 
 .dog-info {
-  padding: 15px;
+  padding: 10px;
 }
 
 .dog-info h2 {
@@ -167,13 +167,13 @@ header p {
 }
 
 .label {
-  color: lightgray;
+  color: grey;
   flex-basis: 40%;
 }
 
 .value {
   flex-basis: 60%;
-  text-align: right;
+  text-align: legt;
 }
 
 .more-details-container {

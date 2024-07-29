@@ -19,26 +19,25 @@ const DogCard = ({ dog }) => {
                 <h2>{dog['이름']}</h2>
                 <div className="dog-card-info">
                     <div className="info-row">
-                        <span className="label"><strong>유실 날짜:</strong></span>
+                        <span className="label">유실 날짜:</span>
                         <span className="value">{dog['유실 날짜']}</span>
                     </div>
                     <div className="info-row">
-                        <span className="label"><strong>성별 (중성화):</strong></span>
+                        <span className="label">성별 (중성화):</span>
                         <span className="value">{dog['성별']} ({dog['중성화']})</span>
                     </div>
                     <div className="info-row">
-                        <span className="label"><strong>견종/묘종:</strong></span>
+                        <span className="label">견종/묘종:</span>
                         <span className="value">{dog['견종/묘종']}</span>
                     </div>
                     <div className="info-row">
-                        <span className="label"><strong>유실 장소:</strong></span>
+                        <span className="label">유실 장소:</span>
                         <span className="value">{dog['도']} {dog['시, 군, 구']} {dog['동, 읍, 면']} {dog['세부 주소']}</span>
                     </div>
                     {dog['URL'] && (
                         <div className="info-row">
-                            <span className="label"><strong>카톡 오픈채팅:</strong></span>
                             <span className="value">
-                                <a href={dog['URL']} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', wordWrap: 'break-word' }}>{dog['URL']}</a>
+                                <a href={dog['URL']} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', wordWrap: 'break-word' }}>카톡 오픈채팅</a>
                             </span>
                         </div>
                     )}
