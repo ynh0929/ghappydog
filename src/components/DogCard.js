@@ -34,16 +34,12 @@ const DogCard = ({ dog }) => {
                         <span className="label">유실 장소:</span>
                         <span className="value">{dog['도']} {dog['시, 군, 구']} {dog['동, 읍, 면']} {dog['세부 주소']}</span>
                     </div>
-                    {dog['URL'] && (
-                        <div className="info-row">
-                            <span className="value">
-                                <a href={dog['URL']} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', wordWrap: 'break-word' }}>카톡 오픈채팅</a>
-                            </span>
-                        </div>
-                    )}
                 </div>
-                <div className="more-details-container">
-                    <Link to={`/dog-details/${dog['이름']}`} className="more-details">더 보기 ...</Link>
+                <div className="actions-container">
+                    {dog['URL'] && (
+                        <a href={dog['URL']} target="_blank" rel="noopener noreferrer" className="action-link">카톡 오픈채팅</a>
+                    )}
+                    <Link to={`/dog-details/${dog['이름']}`} className="action-link">더 보기 ...</Link>
                 </div>
             </div>
         </div>
