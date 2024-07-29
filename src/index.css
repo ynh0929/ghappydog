@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Centers the logo and adds some space below it */
+  max-width: 200px; /* Adjust this value as needed */
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
