@@ -184,16 +184,16 @@ header p {
 }
 
 .action-link {
-  color: #ccc;
+  color: #fa9552;
   text-decoration: none;
   padding: 5px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #fa9552;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .action-link:hover {
-  background-color: #ccc;
+  background-color: #fa9552;
   color: white;
 }
 
