@@ -9,10 +9,6 @@ import FoundAnimals from './components/FoundAnimals';
 import './App.css'; // Ensure this import is present if you have App-specific styles
 import './index.css'; // Ensure this import is present
 
-
-// Import the logo image
-import logo from '../public/logo.png';
-
 const App = () => {
     const [dogs, setDogs] = useState([]);
     const [foundDogs, setFoundDogs] = useState([]);
