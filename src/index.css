@@ -7,8 +7,8 @@
 
 .logo {
   display: block;
-  margin: 0 auto 20px; /* Centers the logo and adds some space below it */
-  max-width: 300px; /* Adjust this value as needed */
+  margin: 0 auto 20px;
+  max-width: 300px; 
 }
 
 body {
@@ -300,6 +300,20 @@ button:hover {
   header p{
     font-size: 13px;
   }
+  
+  .logo {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 250px; 
+  }
+
+  .header-text .highlight {
+    color: #ff6701;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
   .dog-list {
     grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
   }
