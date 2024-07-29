@@ -26,15 +26,16 @@ const App = () => {
             <LoadCSV setLostAnimals={setDogs} setFoundAnimals={setFoundDogs} />
             <div className="container">
                 <header>
-                    <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="logo" />
-                    <h1><Link to="/" onClick={() => window.location.reload()}>지해피독에 오셔서 반갑습니다</Link></h1>
+                    <Link to="/" onClick={() => window.location.reload()}>
+                        <img src={`${process.env.PUBLIC_URL}/image.png`} alt="Logo" className="logo" />
+                    </Link>
                     <div className="header-text">
                         <p className="highlight">"아이들이 집으로 갈 수 있도록 도와주세요"</p>
-                        <p>지해피독은 유실견 구조를 위한 봉사 모임입니다.</p>
-                        <p>많은 아이들이 집을 찾지 못해 길 위를 떠돌고 있습니다.<br />
-                           작은 관심들이 모여 아이들이 따뜻한 가정으로 돌아갈 수 있게 도와주세요.
+                        <p><strong>지해피독은 유실견 구조를 위한 봉사 모임입니다.</strong></p>
+                        <p><strong>많은 아이들이 집을 찾지 못해 길 위를 떠돌고 있습니다.</strong><br />
+                        작은 관심들이 모여 아이들이 따뜻한 가정으로 돌아갈 수 있게 도와주세요.
                         </p>
-                        <p>우리가 포기하지 않고 찾는다면 반드시 집으로 돌아갈 수 있습니다.</p>
+                        <p className="highlight">우리가 포기하지 않고 찾는다면 반드시 집으로 돌아갈 수 있습니다.</p>
                     </div>
                     <nav className="nav-list">
                         <Link to="/lost">유실 동물</Link>
