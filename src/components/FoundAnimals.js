@@ -7,6 +7,7 @@ const FoundAnimals = ({ foundAnimals }) => {
     const [dateFilter, setDateFilter] = useState('');
     const [genderFilter, setGenderFilter] = useState('');
     const [typeFilter, setTypeFilter] = useState('');
+    const [sortOrder, setSortOrder] = useState('latest'); 
 
     const applyFilters = () => {
         // Filters are always applied through state changes
@@ -17,6 +18,15 @@ const FoundAnimals = ({ foundAnimals }) => {
         setDateFilter('');
         setGenderFilter('');
         setTypeFilter('');
+        setSortOrder('latest'); 
+    };
+
+    const sortAnimalsByDate = (animals) => {
+        return animals.sort((a, b) => {
+            const dateA = new Date(a['유실 날짜'].replace(/\./g, '-'));
+            const dateB = new Date(b['유실 날짜'].replace(/\./g, '-'));
+            return sortOrder === 'latest' ? dateB - dateA : dateA - dateB;
+        });
     };
 
     const filteredAnimals = foundAnimals.filter(animal => {
@@ -27,6 +37,7 @@ const FoundAnimals = ({ foundAnimals }) => {
         const [filterYear, filterMonth, filterDay] = dateFilter.split('-').map(Number);
 
         const locationMatch = (
+            animal['도']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
             animal['시, 군, 구']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
             animal['동, 읍, 면']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
             animal['세부 주소']?.toLowerCase().includes(locationFilter.toLowerCase()) || 
@@ -52,6 +63,8 @@ const FoundAnimals = ({ foundAnimals }) => {
         return locationMatch && dateMatch && genderMatch && typeMatch;
     });
 
+    const sortedAnimals = sortAnimalsByDate(filteredAnimals);
+
     return (
         <div className="container mx-auto px-4">
             <p className="text-center mb-4"><strong>총 발견된 동물 수: {filteredAnimals.length}</strong></p>
@@ -61,6 +74,7 @@ const FoundAnimals = ({ foundAnimals }) => {
                     setDateFilter={setDateFilter} 
                     setGenderFilter={setGenderFilter}
                     setTypeFilter={setTypeFilter}
+                    setSortOrder={setSortOrder}
                 />
             </div>
             <section id="dog-list">

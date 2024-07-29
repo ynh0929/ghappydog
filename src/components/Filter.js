@@ -2,11 +2,13 @@
 
 import React, { useState } from 'react';
 
-const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter }) => {
+const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilter, setSortOrder }) => {
     const [location, setLocation] = useState('');
     const [date, setDate] = useState('');
     const [gender, setGender] = useState('');
     const [type, setType] = useState('');
+    const [sort, setSort] = useState('latest'); // New state for sorting
+
 
     const handleLocationChange = (e) => {
         setLocation(e.target.value);
@@ -28,15 +30,22 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
         setTypeFilter(e.target.value);
     };
 
+    const handleSortChange = (e) => {
+        setSort(e.target.value);
+        setSortOrder(e.target.value); // Update parent component's sort order
+    };
+
     const resetFilters = () => {
         setLocation('');
         setDate('');
         setGender('');
         setType('');
+        setSort('latest');
         setLocationFilter('');
         setDateFilter('');
         setGenderFilter('');
         setTypeFilter('');
+        setSortOrder('latest');
     };
 
     return (
@@ -64,6 +73,13 @@ const Filter = ({ setLocationFilter, setDateFilter, setGenderFilter, setTypeFilt
                         <option value="">All</option>
                         <option value="개">개</option>
                         <option value="고양이">고양이</option>
+                    </select>
+                </label>
+                <label>
+                    정렬:
+                    <select value={sort} onChange={handleSortChange}>
+                        <option value="latest">최신순</option>
+                        <option value="recent">오래된순</option>
                     </select>
                 </label>
             </div>
