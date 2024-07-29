@@ -27,7 +27,7 @@ const App = () => {
             <div className="container">
                 <header>
                     <Link to="/" onClick={() => window.location.reload()}>
-                        <img src={`${process.env.PUBLIC_URL}/image.png`} alt="Logo" className="logo" />
+                        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="logo" />
                     </Link>
                     <div className="header-text">
                         <p className="highlight">"아이들이 집으로 갈 수 있도록 도와주세요"</p>
