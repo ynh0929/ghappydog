@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -102,6 +102,7 @@ header p {
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
+  max-width: 300px;
   transition: transform 0.2s, box-shadow 0.2s;
   padding: 0;
 }
